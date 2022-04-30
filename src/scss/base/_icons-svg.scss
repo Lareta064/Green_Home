@@ -1,4 +1,4 @@
-.arrowRight,.arrowRight-black, .arrowRight-green,.arrowGray,.icon-check{
+.arrowRight,.arrowRight-black, .arrowRight-green,.arrowGray,.icon-check, .icon-close{
 	width: 40px;
 	height: 20px;
 	display: inline-block;
@@ -25,4 +25,10 @@
 	width: 24px;
 	height: 20px;
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 8.99999L8.66667 16L22 2' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+.icon-close{
+	width: 32px;
+	height: 32px;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 2L30 30M2 30L30 2L2 30Z' stroke='%23C4C4C4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+	cursor:pointer;
 }

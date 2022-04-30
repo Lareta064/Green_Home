@@ -13,6 +13,7 @@
 	overflow-y: auto;
 	scrollbar-width: thin;
 	scrollbar-color: #F7F7F7 #FFCF56;
+	z-index: 5;
 	&::-webkit-scrollbar{
 		width: 5px;
 		height: 20px;
@@ -34,6 +35,14 @@
 		width: 470px;
 		padding: 30px;
 	    padding-top: 0;
+		position: relative;
+		.btn-close{
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			
+		}
 	}
 }
 .aside-menu{
@@ -62,6 +71,6 @@
 	&__list-block>*+*{margin-top: 20px;}
 
 }
-.aside-menu.aside-menu--active{
+.aside-menu.active{
 	transform: translateX(0);
 }

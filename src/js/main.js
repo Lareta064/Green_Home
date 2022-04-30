@@ -1,26 +1,49 @@
 document.addEventListener("DOMContentLoaded", function (){
+	const asidePanel = document.querySelectorAll('.aside-panel');
 	const asideMenu = document.querySelector('.aside-menu');
 	const navIcon = document.querySelector('.nav-icon');
+    const quizBtn = document.querySelectorAll('[data-quiz]');
+    const quizBlock = document.querySelector('#quiz');
 	const bodyEl = document.body;
 	const overlay = document.querySelector('#overlay');
 	if(asideMenu){
 		navIcon.addEventListener('click', function () {
-			if(this.classList.contains('nav-icon--active')){
-				this.classList.remove('nav-icon--active');
-				asideMenu.classList.remove('aside-menu--active');
-				overlay.classList.remove('overlay--active');
-				bodyEl.classList.remove('noscroll');
-			}else{
-				this.classList.add('nav-icon--active');
-				asideMenu.classList.add('aside-menu--active');
-				bodyEl.classList.add('noscroll');
-				overlay.classList.add('overlay--active');
-			}
+            asideMenu.classList.add('active');
+            overlay.classList.add('overlay--active');
+            bodyEl.classList.add('noscroll');
+            
 			
 		});
 	}
+
+    /***********quiz******** */
+    if(quizBtn.length > 0){
+       
+        for(let item of quizBtn){
+            item.addEventListener('click', function(){
+                quizBlock.classList.add('active');
+               
+            });
+        }
+        
+    }
+    if(asidePanel.length > 0){
+        for(let item of asidePanel){
+            const quizClose =  item.querySelector('.btn-close');
+            if(quizClose){
+                quizClose.addEventListener('click', function(){
+                    item.classList.remove('active');
+                     overlay.classList.remove('overlay--active');
+                     bodyEl.classList.remove('noscroll');
+                });
+            }
+        }
+    }
+    
+        
+    
+
 	/*===========input RANGE========= */
-	
 
 	var sheet = document.createElement('style'),
     $rangeInput = $('.range input'),
