@@ -1,0 +1,76 @@
+.btn,.btn-round,.btn-light,.btn-round-light{
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 86px;
+    padding-right: 86px;
+    font-weight: 700;
+    font-size: 20px;   
+    font-family: "Montserrat", "Commissioner", Arial, sans-serif;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 60px;
+	line-height: 60px;
+    border-radius: 10px;
+	border: 2px solid $green;
+	background-color: $green;
+	&>*+*{margin-left: 12px;}
+	color: #fff;
+	white-space: nowrap;
+	cursor:pointer;
+	transition: .3s;
+	&:hover{
+		
+    	background-color: #00926a;
+   		
+	}
+}
+.btn.btn--100{
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+}
+.btn-round,.btn-round-light{
+	border-radius: 40px;
+}
+.btn-light,.btn-round-light{
+	background-color: #fff;
+	color: $green;
+	&:hover{
+		color: #fff;
+		.arrowRight-green{
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M30 2L38 10M38 10L30 18M38 10H2' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+		}
+	}
+}
+.btn-round--yellow{
+	border-color: $yellow;
+	background-color: $yellow;
+	&:hover{
+		background-color: #ffc430;
+        border-color: #ffc123;
+	}
+}
+/**/
+.label{	
+
+	display: inline-block;    
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: $green;
+	color: #fff;
+	text-transform: uppercase;
+	height: 34px;
+	line-height: 34px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.label.label--red{
+	background-color: $red;
+}

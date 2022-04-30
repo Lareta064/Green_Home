@@ -1,0 +1,17 @@
+.arrowRight,.arrowRight-black, .arrowRight-green{
+	width: 40px;
+	height: 20px;
+	display: inline-block;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M30 2L38 10M38 10L30 18M38 10H2' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+.arrowRight-black{
+	
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M30 2L38 10M38 10L30 18M38 10H2' stroke='%23000000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+.arrowRight-green{
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='40' height='20' viewBox='0 0 40 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M30 2L38 10M38 10L30 18M38 10H2' stroke='%2300B886' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+}
+
+.arrowLeft{
+
+}

@@ -1,0 +1,13 @@
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('#{$fonts-path}/montserrat/montserrat-v23-latin-700.eot');
+  src: local(''),
+  url('#{$fonts-path}/montserrat/montserrat-v23-latin-700.eot?#iefix') format('embedded-opentype'),
+  url('#{$fonts-path}/montserrat/montserrat-v23-latin-700.woff2') format('woff2'),
+  url('#{$fonts-path}/montserrat/montserrat-v23-latin-700.woff') format('woff'),
+  url('#{$fonts-path}/montserrat/montserrat-v23-latin-700.ttf') format('truetype'),
+  url('#{$fonts-path}/montserrat/montserrat-v23-latin-700.svg#Montserrat') format('svg');
+}

@@ -1,0 +1,106 @@
+.logo{
+	font-size: 40px;
+	line-height: 1.3;
+	font-family: $fd;
+	text-transform: uppercase;
+	color: $green;
+	font-weight: 900;
+	
+	span{
+		font-weight: 400;
+		color: #000;
+		font-style: italic;
+		
+	}
+}
+.header-top__content{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+/*gamburder*/
+
+$lineWidth: 30px;
+$lineHeight: 5px;
+
+$width: $lineWidth;
+$height: $lineHeight * 4;
+
+.nav-icon {
+    width: 80px;
+    height: 80px;
+	background-color: $green;
+	border-radius: 50%;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    cursor: pointer;
+	 transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+	 z-index: 5;
+}
+
+.nav-icon span {
+    position: relative;
+    width: 14px;
+    height: 4px;
+    background-color: #fff;
+	border-radius: 5px;
+	left: -7px;
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 28px;
+        height: 4px;
+        transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+        background-color: rgb(255, 255, 255);
+		border-radius: 5px;
+    }
+
+    &::before {
+        top: -($lineHeight*2);
+		width: 32px;
+    }
+
+    &::after {
+        top: $lineHeight*2;
+		width: 32px;
+    }
+}
+
+/* Active state */
+.nav-icon.nav-icon--active{
+	background-color: rgba(255,255,255,.25);
+}
+.nav-icon.nav-icon--active span {
+    background-color: transparent;
+
+    &::before, &::after {
+        top: 0;
+        transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+.cart {
+    padding: 20px 50px 20px 20px;
+    border-radius: 10px;
+    background-size: cover;
+	background-color: $greenDark;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+	p{margin-bottom: 20px;}
+	max-width: 410px;
+}

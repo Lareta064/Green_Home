@@ -1,0 +1,22 @@
+include ../mixins/mixins.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		//====remove blue color for safari ========
+		meta(name="format-detection" content="telephone=no")
+
+		link(rel="stylesheet", href="css/main.css")
+		title !{title}
+		
+	body
+		#overlay
+		block content
+		
+		
+		//=============== my scripts ===================	
+		script(src="js/main.js")
