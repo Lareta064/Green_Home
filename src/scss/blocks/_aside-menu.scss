@@ -1,7 +1,5 @@
 /*aside-menu*/
-.aside-menu{
-	padding: 30px;
-	padding-top: 0;
+.aside-menu{	
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -9,7 +7,7 @@
 	width: 70%;
 	max-width: 800px;
 	transform: translateX(110%);
-	transition:.5s;
+	transition:.3s;
 	height: 100vh;
 	overflow: hidden;
 	overflow-y: auto;
@@ -53,6 +51,12 @@
 	}
 	&__list-block{margin-bottom: 50px;}
 	&__list-block>*+*{margin-top: 20px;}
+
+	.aside-container{
+		width: 470px;
+		padding: 30px;
+	    padding-top: 0;
+	}
 }
 .aside-menu.aside-menu--active{
 	transform: translateX(0);

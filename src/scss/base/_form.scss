@@ -1,0 +1,55 @@
+/*input submit with arrow*/
+.submit-arrow{
+	position: relative;
+	display: inline-block;
+	input{
+		text-align: left;
+		padding-left: 35px;
+	}
+	span{
+		position: absolute;
+		z-index: 2;
+		pointer-events: none;
+		top: 53%;
+		transform: translateY(-50%);
+		right: 35px;
+	}	
+}
+
+.form-item{
+	position: relative;
+	input{
+		background: #FFFFFF;
+		height: 50px;
+		padding-left: 20px;
+		padding-right: 20px;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+		border-radius: 10px;
+		font-family: inherit;
+		font-weight: 700;
+		width: 100%;
+		border: none;
+		outline: none;
+		&::placeholder{
+			font-size: 20px;
+			font-family: inherit;
+			font-weight: 700;
+		}
+	}
+	label{
+		margin-bottom: 10px;
+		display: block;
+		font-family: $fc;
+		font-weight: 500;
+	}
+}
+.form-item.form-item--base{
+	input{
+		height: 60px;
+		border-radius: 6px;
+		box-shadow: none;
+	}
+	label{
+		color: #fff;
+	}
+}
