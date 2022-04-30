@@ -40,9 +40,6 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     }
     
-        
-    
-
 	/*===========input RANGE========= */
 
 	var sheet = document.createElement('style'),
@@ -85,7 +82,21 @@ document.addEventListener("DOMContentLoaded", function (){
         $rangeInput.val(index + 1).trigger('input');
         $(".range-results-wrap").html($(this).html());
     });
-	/************************************* */
+
+
+	/***********quiz************* */
+    if(quizBlock){
+        const quizPlate = quizBlock.querySelectorAll('.quiz-plate');
+        for(let i = 0; i < quizPlate.length; i++){
+            const nextBtn = quizPlate[i].querySelector('.btn-round-light');
+            nextBtn.addEventListener('click', function(){
+                for(let plate of quizPlate){
+                    plate.classList.remove('active');
+                }
+                quizPlate[i+1].classList.add('active');
+            })
+        }
+    }
 
 
 })

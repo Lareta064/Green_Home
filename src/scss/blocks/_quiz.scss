@@ -2,9 +2,57 @@
 
 .quiz{
 	background: #F7F7F7;
-	
+	&-progress{
+		height: 4px;
+		width: 100%;
+		position: relative;
+		background: rgba(52, 138, 167, .15);		
+		border-radius: 2px;
+		max-width: 300px;
+		span{
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 20%;
+			background-color: $green;
+			border-radius: 2px;
+		}
+	}
+	&-plate{
+		opacity: 0;
+		z-index: -1;
+		display: none;
+		animation-name: opacity;
+	    animation-duration: 1s;
+	    animation-fill-mode: forwards;
+	}
+	&-plate.active{
+		opacity: 1;
+		z-index: 2;
+		display: block;
+		
+	}
+	&-group{
+		background: #348AA7;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	.form-btn{
+		.btn-round-light{margin-left: auto;
+		}
+	}	
 }
 .quiz.active{
 	transform: translateX(0);
 	
+	
+}
+@keyframes opacity{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
 }
