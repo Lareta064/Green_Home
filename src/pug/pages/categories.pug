@@ -1,0 +1,15 @@
+extends ../layouts/layout.pug
+
+block content
+	include ../blocks/_quiz
+	include ../blocks/_aside-menu
+	include ../sections/_header.pug
+	.btn-round.btn-round--yellow(data-quiz)
+		span Request a quote
+		span.arrowRight
+	
+	
+	
+	
+block variables
+	-var title = "Categories";

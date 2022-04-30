@@ -14,7 +14,7 @@
     font-family: $fc;
 	font-size: 20px;
 	line-height: 1.2;
-	
+	color: #000000;
 	-webkit-font-smoothing: antialiased;
 	
   }
@@ -104,10 +104,12 @@ input[type="submit"]{
 		width: 100%;
 	}
 }
-ul.test{
-	&>li{
-		padding: 20px;
-		
-		border: 1px solid lightgrey;
-	}
+.bg-yellow{
+	background-color: $yellow!important;
+}
+.bg-aqua{
+	background: #348AA7 !important;
+}
+.bg-white{
+	background: #ffffff !important;
 }

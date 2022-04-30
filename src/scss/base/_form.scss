@@ -108,6 +108,7 @@ input[type="radio"]{
 		font-size: 20px;
 		color: #000000;
 		position: relative;
+		transition: .5s;
 		cursor: pointer;
 		&:after{
 			content:'';
@@ -122,6 +123,7 @@ input[type="radio"]{
 	}
 	input:checked + span{
 		background-color: $green;
+		color: #fff;
 	}
 }
 /*********************************************/

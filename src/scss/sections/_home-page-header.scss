@@ -1,0 +1,66 @@
+.header{
+	padding-top: 40px;
+}
+.number-cards-wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 2.1fr;
+	column-gap:40px;
+	margin-top: 60px;
+}
+.home-page{
+	.header{
+		position: relative;
+		.header__title{
+			position: relative;
+			
+			.title-96{z-index: 2; position: relative;}
+			&:after{
+				content: '';
+				width: 350px;
+				height: 400px;
+				background-image: url('../img/palm-bg.png');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				right: 0;
+				animation-name: swing;
+				animation-duration: 15s;
+				animation-iteration-count: infinite;
+
+			}
+		}
+	}
+}
+@keyframes swing{
+	0%{
+		transform: rotate(0deg);
+		transform-origin:100% 100% ;
+	}
+	50%{
+		transform: rotate(-20deg);
+		transform-origin:100% 100% ;
+	}
+	100%{
+		transform: rotate(0deg);
+		transform-origin:100% 100% ;
+	}
+}
+.number-card{
+	padding: 20px;
+	border-radius: 10px;
+	background: #00B886;
+	color: #fff;
+	&>*+*{margin-top: 16px;}
+	.text-24{
+		height: 60px;
+		overflow: hidden;
+	}
+	
+}
+.number-card--light{
+	background-color:$yellow-light;
+	color: #000000;
+}

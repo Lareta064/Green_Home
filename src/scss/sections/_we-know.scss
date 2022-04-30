@@ -1,0 +1,11 @@
+.we-know-cards{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap:30px;
+	row-gap: 30px;
+	&__col{
+		display: flex;
+		.thing-card +.thing-card{margin-left: 30px;}
+	}
+	
+}
