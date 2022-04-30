@@ -98,5 +98,17 @@ document.addEventListener("DOMContentLoaded", function (){
         }
     }
 
+    /********RATING STARS****** */
+    const ratingBlock = document.querySelectorAll('.rating-block');
+    if(ratingBlock.length > 0){
+        for(let item of ratingBlock){
+            const ratingData =item.getAttribute('data-rating');
+            const starItem = item.querySelectorAll('span');
+            console.log(ratingData);
+            for(let i =0; i<ratingData; i++){
+                starItem[i].classList.add('active');
+            }
+        }
+    }
 
 })

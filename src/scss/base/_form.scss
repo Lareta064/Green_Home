@@ -216,7 +216,7 @@ input[type="radio"]{
     height: 20px;
     padding-top: 6px;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     &:first-child {
       flex: 0 auto;
       width: 20px;
@@ -268,7 +268,7 @@ input[type="radio"]{
 .range-results-wrap {
   margin-bottom: 30px;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 .range-results {
   font-weight: 900;

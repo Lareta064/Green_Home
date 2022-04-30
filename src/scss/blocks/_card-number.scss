@@ -68,3 +68,11 @@
 .thing-card.bg-white{
     border: 1px solid #000000;
 }
+.thing-card.bg-aqua{
+    color: #fff;
+}
+.card-link-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
