@@ -41,6 +41,8 @@
 		display: block;
 		font-family: $fc;
 		font-weight: 500;
+		position: relative;
+		
 	}
 }
 .form-item.form-item--base{
@@ -52,4 +54,220 @@
 	label{
 		color: #fff;
 	}
+}
+.form-row{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 20px;
+	margin-top: 20px;
+}
+.form-btn{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+/*********custom radio********/
+input[type="radio"]{
+	appearance:none;
+}
+.form-item+.form-item{
+	margin-top: 20px;
+}
+.form-item .custom-radiobutton{
+	margin-bottom: 0;
+	input{
+		width: 0.01em;
+		height: 0.01em;
+		position: absolute;
+		top: 0;		
+		left: 0;
+		opacity: 0;
+	}
+	span{
+		background: #FFFFFF;
+		height: 50px;
+		line-height: 50px;
+		padding-left: 20px;
+		padding-right: 20px;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+		border-radius: 10px;
+		font-family: inherit;
+		font-weight: 700;
+		display: block;
+		border: none;
+		outline: none;
+		font-size: 20px;
+		color: #000000;
+		position: relative;
+		cursor: pointer;
+		&:after{
+			content:'';
+			width: 24px;
+			height: 18px;
+			position: absolute;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='18' viewBox='0 0 24 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2 8.99999L8.66667 16L22 2' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+			right: 16px;
+			top: 16px;
+			z-index: 2;
+		}
+	}
+	input:checked + span{
+		background-color: $green;
+	}
+}
+/*********************************************/
+
+.area-range{
+	background: #FFFFFF;
+	/* Shadow 2 */
+	padding: 20px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+}
+
+/***************************/
+@mixin rangeThumb {
+  width: 20px;
+  height: 20px;
+  margin: -10px 0  0;
+  border-radius: 50%;
+  background:$green;
+  cursor: pointer;
+  border: 0 !important;
+}
+@mixin rangeTrack {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: $gray-300;
+}
+
+.range {
+  position: relative;
+  height: 4px;
+}
+.range input {
+  width: 100%;
+  position: absolute;
+  top: 2px;
+  height: 0;
+  -webkit-appearance: none;
+
+  // Thumb
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include rangeThumb;
+  }
+  &::-moz-range-thumb {
+    @include rangeThumb;
+  }
+  &::-ms-thumb {
+    @include rangeThumb;
+  }
+
+  // Track
+  &::-webkit-slider-runnable-track {
+    @include rangeTrack;
+  }
+  &::-moz-range-track {
+    @include rangeTrack;
+  }
+  &::-ms-track {
+    @include rangeTrack;
+  }
+
+  &:focus {
+    background: none;
+    outline: none;
+  }
+  &::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+}
+
+// Labels below slider
+.range-labels {
+  margin: -14px 0 0;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  li {
+    position: relative;
+    flex: 1;
+    text-align: right;
+    color: $gray-300;
+    font-size: 0;
+    cursor: pointer;
+    height: 20px;
+    padding-top: 6px;
+    display: flex;
+    align-items: start;
+    &:first-child {
+      flex: 0 auto;
+      width: 20px;
+      &:before {
+        left: 0;
+        right: auto;
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      content: "";
+      width: 14px;
+      height: 14px;
+      background: $gray-300;
+      border-radius: 50%;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: -20px;
+      top: 0;
+      bottom: 0;
+      width: 20px;
+      z-index: 2;
+    }
+    .range-results, .range-total {
+      font-size: 0;
+      line-height: 0;
+      color: transparent;
+      margin: 0;
+    }
+  }
+  .active {
+    color:$green;
+  }
+  .selected::before {
+    background:$green;
+  }
+  .active.selected::before {
+    display: none;
+  }
+}
+
+.range-results-wrap {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: start;
+}
+.range-results {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 54px;
+  font-family: $fd;
+}
+.range-total {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-left: 10px;
+  color: $gray-400;
+  font-family: $fc;
 }

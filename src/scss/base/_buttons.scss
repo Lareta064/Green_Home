@@ -1,4 +1,4 @@
-.btn,.btn-round,.btn-light,.btn-round-light{
+.btn,.btn-round,.btn-light,.btn-round-light,.btn-arrow{
 	display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -73,4 +73,14 @@
 }
 .label.label--red{
 	background-color: $red;
+}
+.btn-arrow{
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: transparent;
+	border-color: transparent;
+	&:hover{
+		background-color: transparent;
+	    
+	}
 }

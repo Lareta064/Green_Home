@@ -1,5 +1,5 @@
 /*aside-menu*/
-.aside-menu{	
+.aside-panel{	
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -26,9 +26,18 @@
 	@media(max-width:1600px){
 		max-width: 563px;
 	}
-	background-color: $green;
+	
 	.title-48{color: #fff;}
 	&__title{margin-bottom: 30px;}
+	
+	.aside-container{
+		width: 470px;
+		padding: 30px;
+	    padding-top: 0;
+	}
+}
+.aside-menu{
+	background-color: $green;
 	&__list{
 		max-width: 346px;
 		a{
@@ -52,11 +61,6 @@
 	&__list-block{margin-bottom: 50px;}
 	&__list-block>*+*{margin-top: 20px;}
 
-	.aside-container{
-		width: 470px;
-		padding: 30px;
-	    padding-top: 0;
-	}
 }
 .aside-menu.aside-menu--active{
 	transform: translateX(0);

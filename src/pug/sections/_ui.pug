@@ -3,6 +3,67 @@
 	
 	ul.test
 		li
+			
+			.area-range
+				.range-results-wrap
+					.range-results
+						| 50 m
+						sup 2
+					.range-total
+						| 390 m
+						sup 3
+				.range
+					input(type='range' min='1' max='6' steps='1' value='1')
+				ul.range-labels
+					li.active.selected
+						.range-results
+							| 50 m
+							sup 2
+						.range-total
+							| 130 m
+							sup 3
+					li
+						.range-results
+							| 100 m
+							sup 2
+						.range-total
+							| 260 m
+							sup 3
+					li
+						.range-results
+							| 150 m
+							sup 2
+						.range-total
+							| 390 m
+							sup 3
+					li
+						.range-results
+							| 200 m
+							sup 2
+						.range-total
+							| 520 m
+							sup 3
+					li
+						.range-results
+							| 650 m
+							sup 2
+						.range-total
+							| 390 m
+							sup 3
+					li
+						.range-results
+							| 780 m
+							sup 2
+						.range-total
+							| 390 m
+							sup 3
+			.form-btn
+				button.btn-arrow
+					span.arrowGray
+				button.btn-round-light
+					span Next step
+					span.arrowRight-green
+		li
 			.li-item.title-96 title-96
 			pre.
 				.title-96 title-96
@@ -108,18 +169,68 @@
 						span.arrowRight
 		li(style="background-color:  #F7F7F7;")
 			.form-item
-				input(type="text" placeholder="Heating and hot water supply")
+				input(type="text" name="" placeholder="Heating and hot water supply")
+			.form-item
+				input(type="text" name="" placeholder="Heating and hot water supply")
+			.form-item
+				input(type="text" name="" placeholder="Heating and hot water supply")
 			
 			pre.
 				.form-item
-					input(type="text" placeholder="Heating and hot water supply")
+					input(type="text" name="" placeholder="Heating and hot water supply")
 		
 		li(style="background-color:  #348AA7;")
 			.form-item.form-item--base
 				label Zip Code
-				input(type="text" placeholder="Heating and hot water supply")
-			
+				input(type="text" name="")
+			.form-row
+				.form-item.form-item--base
+					label Zip Code
+					input(type="text" name="")
+				.form-item.form-item--base
+					label Zip Code
+					input(type="text" name="")
+			.form-btn
+				button.btn-arrow
+					span.arrowGray
+				button.btn-round-light
+					span Next step
+					span.arrowRight-green
 			pre.
 				.form-item.form-item--base
 					label Zip Code
-					input(type="text" placeholder="Heating and hot water supply")
+					input(type="text" name="")
+				.form-row
+					.form-item.form-item--base
+						label Zip Code
+						input(type="text" name="")
+					.form-item.form-item--base
+						label Zip Code
+						input(type="text" name="")
+				.form-btn
+					button.btn-arrow
+						span.arrowGray
+					button.btn-round-light
+						span Next step
+						span.arrowRight-green
+
+		li
+			.title-38 Do you have a tub or two showers?
+			.form-item.form-item--base
+				label.custom-radiobutton
+					input(type="radio" name="house_type")
+					span Apartment
+			.form-item.form-item--base
+				label.custom-radiobutton
+					input(type="radio" name="house_type")
+					span Apartment2
+			.form-item.form-item--base
+				label.custom-radiobutton
+					input(type="radio" name="house_type")
+					span Apartment3
+			.form-btn
+				button.btn-arrow
+					span.arrowGray
+				button.btn-round-light
+					span Next step
+					span.arrowRight-green
