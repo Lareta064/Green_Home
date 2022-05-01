@@ -54,22 +54,21 @@
 			color: #000;
 		}
 	}
+	.info-item span{
+		font-size: 16px;
+		color: #000;
+		font-weight: 400;
+	}
+	.info-item p{
+		font-size: 30px;
+		font-weight: 700;
+		color: #000;
+		line-height: 1.27;
+	}
 	.info-item__row{
 		display: flex;
 		.info-item{
 			min-width: 160px;
-
-			span{
-				font-size: 16px;
-				color: #000;
-				font-weight: 400;
-			}
-			p{
-				font-size: 30px;
-				font-weight: 700;
-				color: #000;
-				line-height: 1.27;
-			}
 			span +p{margin-top: 8px;}
 		}
 		&>*+*{margin-left: 10px;}

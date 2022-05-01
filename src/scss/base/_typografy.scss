@@ -58,11 +58,14 @@
 .text-green, .text-green>*{
 	color: $green!important;
 }
-.text-medium{
+.text-medium,.header__text{
 	font-weight: 500!important;
 }
 .mb-40{
 	margin-bottom: 40px!important;
+}
+.mb-20{
+	margin-bottom: 20px!important;
 }
 .mb-60{
 	margin-bottom: 60px!important;

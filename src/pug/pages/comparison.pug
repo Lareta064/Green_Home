@@ -1,0 +1,17 @@
+extends ../layouts/layout.pug
+
+block content
+	include ../blocks/_quiz
+	include ../blocks/_aside-menu
+	include ../sections/_header.pug
+	main.comparison-page
+		include ../sections/_comparison-page-header.pug
+		include ../sections/_comparison-cards.pug
+		include ../sections/_faq.pug
+		include ../sections/_popular.pug
+		include ../sections/_number-card-bottom
+	
+	
+	
+block variables
+	-var title = "Comparison";
