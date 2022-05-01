@@ -4,10 +4,12 @@ block content
 	include ../blocks/_quiz
 	include ../blocks/_aside-menu
 	include ../sections/_header.pug
-	.btn-round.btn-round--yellow(data-quiz)
-		span Request a quote
-		span.arrowRight-black
-	
+	main.categories-page
+		include ../sections/_category-page-header.pug
+		include ../sections/_category-cards.pug
+		include ../sections/_popular.pug
+		include ../sections/_faq.pug
+		include ../sections/_number-card-bottom
 	
 	
 	

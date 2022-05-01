@@ -7,8 +7,21 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 2.1fr;
 	column-gap:30px;
-	
 }
+// .we-know-cards, .number-cards-wrapper,.card-link-wrapper{
+// 	@media(max-width:1199px){
+// 		width: 1290px;
+// 		overflow:hidden;
+// 		overflow-x: auto;
+// 		// width: calc(50% + 50vw);
+// 		scrollbar-width: none;
+// 		&::-webkit-scrollbar{
+// 			display: none;
+// 			width: 0;
+// 			height: 0;	
+// 		}
+// 	}
+// }
 .number-cards-wrapper.wrapper--reverse{
 	grid-template-columns:  2.1fr 1fr 1fr;
 }

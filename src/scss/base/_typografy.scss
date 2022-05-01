@@ -6,24 +6,38 @@
 .title-96{
 	font-size: 96px;
 	line-height: 1.14;
+	@media(max-width:1023px){
+		font-size: 55px;
+	}
 }
 .title-88{
 	font-size: 88px;
 	line-height: 1.14;
+	@media(max-width:1023px){
+		font-size: 50px;
+	}
 }
 .title-48 {
 	font-size: 48px;
     line-height: 1.12;
+	@media(max-width:1023px){
+		font-size: 38px;
+	}
 }
 .title-44 {
 	font-size: 44px;
     line-height: 1.14;
+	@media(max-width:1023px){
+		font-size: 32px;
+	}
 }
 .title-38{
 	font-size: 38px;
 	font-weight: 500;
 	font-family: $fc;
+	line-height: 1.21;
 }
+
 .text-186{
 	font-size: 186px;
 	line-height: 0.86;
@@ -41,15 +55,26 @@
 .text-green, .text-green>*{
 	color: $green!important;
 }
+.text-medium{
+	font-weight: 500!important;
+}
 .mb-40{
 	margin-bottom: 40px!important;
 }
-.pt-120{
-	padding-top: 120px;
+.mb-60{
+	margin-bottom: 60px!important;
 }
 .mt-50{
 	margin-top: 50px;
 }
+.pt-80{
+	padding-top: 80px;
+}
+
+.pt-120{
+	padding-top: 120px;
+}
+
 .section-title{
 	margin-bottom: 50px;
 }

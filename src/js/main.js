@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function (){
         for(let item of quizBtn){
             item.addEventListener('click', function(){
                 quizBlock.classList.add('active');
-               
+                overlay.classList.add('overlay--active');
+                bodyEl.classList.add('noscroll');
             });
         }
         

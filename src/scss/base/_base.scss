@@ -142,3 +142,12 @@ main{padding-bottom: 120px;}
 
 	}
 }
+
+.grid-50,.grid-850{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap:30px;
+}
+.grid-850{
+	grid-template-columns: 85fr 41fr;
+}

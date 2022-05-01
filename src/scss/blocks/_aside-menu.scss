@@ -57,6 +57,9 @@
 			font-weight: 500;
 			display: block;
 			transition: .3s;
+			@media(max-width:1023px){
+				font-size: 20px;
+			}
 			&:hover{
 				color: $yellow;
 			}
