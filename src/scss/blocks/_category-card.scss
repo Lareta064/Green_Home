@@ -1,4 +1,4 @@
-.category-card{
+.product-card{
 	background: #FFFFFF;
 	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
@@ -34,12 +34,15 @@
 		padding-bottom: 30px;
 	}
 	
-	.category-card__btn{
+	.product-card__btn{
 		margin-top: auto;
+		
 		&>*{width: 100%;}
+		.btn, .btn-round, .btn-round-light, .btn-light{padding-left: 10px;
+		padding-right: 10px;}
 	}
 }
-.category-cards-wrapper{
+.product-cards-wrapper{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap:30px;
@@ -75,4 +78,85 @@
 	}
 	.info-item__row +.info-item{margin-top: 14px;}
 	.rating-block{margin-bottom: 8px;}
+}
+.product-card.product-card--horizontal{
+	flex-direction: row;
+	justify-content: space-between;
+    .product-card__label{margin-bottom: 20px;}
+	.product-card__btn,.product-card__top{
+		width: 390px;
+	}
+	.product-descrip{
+		width: 430px;
+		padding: 20px;
+		border-radius: 10px;
+		background-color:  #F7F7F7;
+	}
+	.product-card__img{
+		width: 100%;
+		height: 212px;
+		border-radius: 10px;
+	}
+	.product-card__btn{margin-top: 0;}
+	.product-card__btn >*+*{margin-top: 20px;}
+	.product-descrip__title{
+		margin-bottom: 12px;
+	}
+	.product-descrip .info-item__row .info-item{min-width: 146px;}
+}
+.adt-card .product-card{
+	.product-card__img{background-color: #0055D4;}
+	.product-card__img img{width: 180px;
+	height: 180px;}
+	.product-descrip{
+		background: #FFF1CC;
+	}
+}
+.vivint-card,.simpli-card{
+	.product-card__img{background-color:  #FFCF56;}
+}
+.cove-card{
+	.product-card__img{
+		background-color: #00CDB8;
+	}
+}
+.front-card{
+	.product-card__img{
+		background-color: #59BC64;
+	}
+}
+
+.product-card__btn{
+	.card-bg{
+		padding-bottom: 27px;
+		p{
+			font-weight: 700;
+			color: #fff;
+			span{
+				font-weight: 400;
+			}
+		}
+		.btn-round{
+			padding-left: 40px;
+			padding-right: 40px;
+			margin-top: 32px;
+			
+		}
+	}
+}
+.favorite-card +.favorite-card{
+	margin-top: 82px;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: -40px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #00B886;
+		border-radius: 1px;
+		height: 2px;
+		width: 70%;
+		max-width: 410px;
+	}	
 }

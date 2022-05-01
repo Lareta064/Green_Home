@@ -1,7 +1,7 @@
 .brend-card{
 	background: #FFFFFF;
     border-radius: 10px;
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	height: 100px;
@@ -9,7 +9,8 @@
 	min-height: 100px;
 	padding: 20px;
 	img{
-		width: 264px;
+		width: auto;
+		max-width: unset;
 		height: 60px;
 		object-fit: contain;
 	}
