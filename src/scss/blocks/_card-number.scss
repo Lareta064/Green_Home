@@ -70,6 +70,15 @@
         margin-bottom: 24px;
         
     }
+    .number-card-row{
+        display: flex;
+        align-items: center;
+        .icon-star{
+            font-size: 70px;
+            line-height: 1;
+            margin-right: 14px;
+        }
+    }
 }
 .number-card.bg-white,
 .thing-card.bg-white{

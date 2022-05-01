@@ -13,10 +13,24 @@
 		
 	}
 }
+.header-top{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+   background-color:rgba(247, 247, 247, .7);
+   backdrop-filter: blur(5px);
+}
 .header-top__content{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.header-top__col{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    max-width: 850px;
+    justify-content: space-between;
 }
 /*gamburder*/
 

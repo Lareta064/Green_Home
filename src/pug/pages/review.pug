@@ -1,0 +1,18 @@
+extends ../layouts/layout.pug
+
+block content
+	include ../blocks/_quiz
+	include ../blocks/_aside-menu
+	include ../sections/_header-top-review.pug
+	main.review-page
+		include ../sections/_review-page-header.pug
+		include ../sections/_review-content.pug
+		include ../sections/_review-cards.pug
+		include ../sections/_popular.pug
+		include ../sections/_number-card-bottom
+	include ../sections/_footer.pug
+	
+	
+	
+block variables
+	-var title = "Review";
