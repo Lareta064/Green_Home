@@ -1,12 +1,13 @@
 .header{
 	padding-top: 40px;
+	.number-cards-wrapper{margin-top: 60px;}
 	
 }
 .number-cards-wrapper{
 	display: grid;
 	grid-template-columns: 1fr 1fr 2.1fr;
-	column-gap:40px;
-	margin-top: 60px;
+	column-gap:30px;
+	
 }
 .number-cards-wrapper.wrapper--reverse{
 	grid-template-columns:  2.1fr 1fr 1fr;
@@ -57,6 +58,10 @@
 	border-radius: 10px;
 	background: #00B886;
 	color: #fff;
+	width: 100%;
+	width: 300px;
+	max-width: 300px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
 	&>*+*{margin-top: 16px;}
 	.text-24{
 		height: 60px;

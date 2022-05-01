@@ -1,0 +1,14 @@
+.popular{
+	overflow: hidden;
+	.section-title{
+		.text-24{margin-top: 10px;}
+	}
+}
+
+.card-link-wrapper.wrapper-decore{
+	&:after{
+		top: -180px;
+		right: -130px;
+
+	}
+}

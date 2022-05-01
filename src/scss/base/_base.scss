@@ -82,7 +82,7 @@ input[type="submit"]{
 	padding-bottom: 0;
 	cursor:pointer;
 }
-
+main{padding-bottom: 120px;}
 .container{
 	width: 1320px;
 	padding-left: 15px;
@@ -116,4 +116,29 @@ input[type="submit"]{
 }
 .text-center{
 	text-align: center !important;
+}
+.wrapper-decore{
+	position: relative;
+	
+	&>*{
+		position: relative;
+		z-index: 2;
+	}
+	&:after{
+		content: '';
+		width: 350px;
+		height: 400px;
+		background-image: url('../img/palm-bg2.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		animation-name: swing;
+		animation-duration: 15s;
+		animation-iteration-count: infinite;
+
+	}
 }

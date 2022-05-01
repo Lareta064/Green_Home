@@ -65,8 +65,16 @@
         
     }
 }
+.number-card{
+    .text-186{
+        margin-bottom: 24px;
+        
+    }
+}
+.number-card.bg-white,
 .thing-card.bg-white{
     border: 1px solid #000000;
+    color: #000000;
 }
 .thing-card.bg-aqua{
     color: #fff;
@@ -75,4 +83,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
+}
+.card-bg{
+    .form-btn{margin-top: 30px;}
 }

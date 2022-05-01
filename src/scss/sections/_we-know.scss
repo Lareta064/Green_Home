@@ -1,3 +1,6 @@
+.we-know{
+	overflow: hidden;
+}
 .we-know-cards{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -8,4 +11,11 @@
 		.thing-card +.thing-card{margin-left: 30px;}
 	}
 	
+}
+.card-link-wrapper.wrapper-decore{
+	&:after{
+		top: -210px;
+		right: -130px;
+
+	}
 }

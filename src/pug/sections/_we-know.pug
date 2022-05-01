@@ -101,10 +101,10 @@ section.reviews.pt-120
 section.popular.pt-120
 	.container
 		.section-title
-			.title-88 Latest reviews
+			.title-88 Popular articles
 			.text-24 made by home improvement experts and authors
 		
-		.card-link-wrapper
+		.card-link-wrapper.wrapper-decore
 			//================= left block ============
 			.card-link-wrapper__left
 				.card-link-banner.text-center(style="background-image: url(./img/article-banner.jpg)")
@@ -149,21 +149,29 @@ section.popular.pt-120
 			a(href="#!").btn-round
 				span Check all articles
 				span.arrowRight
+
+section.statistic-cards.pt-120
+	.container
 		//===============number cards =============
 		.number-cards-wrapper.wrapper--reverse
-			
 			.card-bg(style="background-image: url(./img/card-bg.jpg);")
-				.text-24 Members receive great discounts, get quotes <br> from top home improvement companies and more
-				a.btn-round.btn-round--yellow(href="#!")
-					span Sign up now
-					span.arrowRight
+				.text-24.mb-40 Get a complete home improvement guide via email now. Absolutely free
+				form
+					.form-item
+						.form-item.form-item--base
+							input(type="text" name="user_email" placeholder="Input your email")
+					
+					.form-btn
+						a.btn-round.btn-round--yellow(href="#!")
+							span Get the guide
+							span.arrowRight-black
 			
 			.number-card
-				.text-94 256
-				.text-24 home improvement articles and guides 
+				.text-186 26
+				.text-24 pages of money saving information
 			
-			.number-card.number-card--light
-				.text-94 76
-				.text-24 home improvement company reviews
+			.number-card.bg-white
+				.text-186 11
+				.text-24 experts worked <br> on this guide
 
 			
