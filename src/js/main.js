@@ -105,11 +105,44 @@ document.addEventListener("DOMContentLoaded", function (){
         for(let item of ratingBlock){
             const ratingData =item.getAttribute('data-rating');
             const starItem = item.querySelectorAll('span');
-            console.log(ratingData);
+            
             for(let i =0; i<ratingData; i++){
                 starItem[i].classList.add('active');
             }
         }
+    }
+    /*************** */
+    const accordeonTitle = document.querySelectorAll('.accordeon-item-header');
+    const accordeonContent = document.querySelectorAll('.accordeon-item-content');
+    let loock;
+
+    for (i = 0; i < accordeonTitle.length; i++) {
+        accordeonTitle[i].addEventListener('click', function() {
+            if (!(this.classList.contains('show'))) {
+
+                for(j = 0; j < accordeonTitle.length; j++) {
+                    accordeonTitle[j].classList.remove('show');
+
+                    for (k = 0; k < accordeonContent.length; k++) {
+                        this.nextElementSibling;
+                        accordeonContent[k].style.height = '0px';
+                    }
+                    
+                }
+                
+                this.classList.add('show');
+                loock = this.nextElementSibling;
+                loock.style.height = loock.scrollHeight + 20+"px";
+                
+            } else if (this.classList.contains('show')) {
+                
+                for(i = 0; i < accordeonTitle.length; i++) {
+                    accordeonTitle[i].classList.remove('show');
+                    loock.style.height = '0px';
+
+                }
+            }
+        })
     }
 
 })

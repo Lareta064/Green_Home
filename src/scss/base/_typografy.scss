@@ -46,11 +46,14 @@
 	font-size: 94px;
 	line-height: 0.85;
 }
-.text-24{
+.text-24, .title-24{
 	font-size: 24px;
 	line-height: 30px;
 	font-family: $fc;
 	font-weight: 500;
+}
+.title-24{
+	font-weight: 700;
 }
 .text-green, .text-green>*{
 	color: $green!important;
