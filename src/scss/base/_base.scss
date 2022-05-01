@@ -143,7 +143,16 @@ main{padding-bottom: 120px;}
 
 	}
 }
-
+.footer.wrapper-decore{
+	overflow: hidden;
+	&:after{
+			background-image: url('../img/palm-bg3.png');
+			width: 595px;
+			height: 525px;
+			top: 65px;
+			right: -150px;
+	}
+}
 .grid-50,.grid-850{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
