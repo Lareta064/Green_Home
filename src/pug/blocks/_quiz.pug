@@ -1,11 +1,10 @@
 //===== quiz ======
-.aside-panel.quiz#quiz
+#quiz.aside-panel.quiz
 	.aside-container
 		.btn-close
 		.aside-panel__title
 			.title-48.text-green Assistance
-		
-		//============== question #1 ================
+		// ============== question #1 ================
 		.quiz-plate.active
 			.quiz-header
 				.quiz-progress.mb-40
@@ -15,23 +14,21 @@
 				.quiz-questions
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="house_type")
+							input(type='radio' name='house_type')
 							span Apartment
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="house_type")
+							input(type='radio' name='house_type')
 							span Apartment2
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="house_type")
+							input(type='radio' name='house_type')
 							span Apartment3
 					.form-btn
-						
-						button.btn-round-light(data-role="next")
+						button.btn-round-light(data-role='next')
 							span Next step
 							span.arrowRight-green
-		
-		//============== question #2 ================
+		// ============== question #2 ================
 		.quiz-plate
 			.quiz-header
 				.quiz-progress.mb-40
@@ -42,22 +39,21 @@
 					.quiz-group
 						.form-item.form-item--base
 							label Zip Code
-							input(type="text" name="zipCode")
+							input(type='text' name='zipCode' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*)\\./g, '$1');")
 						.form-row
 							.form-item.form-item--base
 								label Number
-								input(type="text" name="nubber")
+								input(type='text' name='nubber' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*)\\./g, '$1');")
 							.form-item.form-item--base
 								label Add to.
-								input(type="text" name="addTo")
+								input(type='text' name='addTo' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*)\\./g, '$1');")
 					.form-btn
-						button.btn-arrow
+						button.btn-arrow(data-role='prev')
 							span.arrowGray
-						button.btn-round-light(data-role="next")
+						button.btn-round-light(data-role='next')
 							span Next step
 							span.arrowRight-green
-		
-		//============== question #3 ================
+		// ============== question #3 ================
 		.quiz-plate
 			.quiz-header
 				.quiz-progress.mb-40
@@ -74,7 +70,7 @@
 								| 390 m
 								sup 3
 						.range
-							input(type='range' min='1' max='6' steps='1' value='1')
+							input(type='range' name='area' min='1' max='6' steps='1' value='1')
 						ul.range-labels
 							li.active.selected
 								.range-results
@@ -119,13 +115,12 @@
 									| 390 m
 									sup 3
 					.form-btn
-						button.btn-arrow
+						button.btn-arrow(data-role='prev')
 							span.arrowGray
-						button.btn-round-light(data-role="next")
+						button.btn-round-light(data-role='next')
 							span Next step
 							span.arrowRight-green
-
-		//============== question #4 ================
+		// ============== question #4 ================
 		.quiz-plate
 			.quiz-header
 				.quiz-progress.mb-40
@@ -135,24 +130,23 @@
 				.quiz-questions
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span Apartment
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span House
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span Detached house
 					.form-btn
-						button.btn-arrow
+						button.btn-arrow(data-role='prev')
 							span.arrowGray
-						button.btn-round-light(data-role="next")
+						button.btn-round-light(data-role='next')
 							span Next step
 							span.arrowRight-green
-
-		//============== question #5 ================
+		// ============== question #5 ================
 		.quiz-plate
 			.quiz-header
 				.quiz-progress.mb-40
@@ -162,24 +156,23 @@
 				.quiz-questions
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span A spaardouche
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span A regular shower
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span A deposit safe
 					.form-btn
-						button.btn-arrow
+						button.btn-arrow(data-role='prev')
 							span.arrowGray
-						button.btn-round-light(data-role="next")
+						button.btn-round-light(data-role='next')
 							span Next step
 							span.arrowRight-green
-		
-		//============== question #6 ================
+		// ============== question #6 ================
 		.quiz-plate
 			.quiz-header
 				.quiz-progress.mb-40
@@ -189,19 +182,19 @@
 				.quiz-questions
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span No, I don’t have
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span I have a bath tub
 					.form-item.form-item--base
 						label.custom-radiobutton
-							input(type="radio" name="type_property")
+							input(type='radio' name='type_property')
 							span I have a second shower
 					.form-btn
-						button.btn-arrow
+						button.btn-arrow(data-role='prev')
 							span.arrowGray
-						button.btn-round-light(data-role="next")
+						button.btn-round-light(data-role='next')
 							span Next step
 							span.arrowRight-green

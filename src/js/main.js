@@ -86,18 +86,18 @@ document.addEventListener("DOMContentLoaded", function (){
 
 
 	/***********quiz************* */
-    if(quizBlock){
-        const quizPlate = quizBlock.querySelectorAll('.quiz-plate');
-        for(let i = 0; i < quizPlate.length; i++){
-            const nextBtn = quizPlate[i].querySelector('.btn-round-light');
-            nextBtn.addEventListener('click', function(){
-                for(let plate of quizPlate){
-                    plate.classList.remove('active');
-                }
-                quizPlate[i+1].classList.add('active');
-            })
-        }
-    }
+    // if(quizBlock){
+    //     const quizPlate = quizBlock.querySelectorAll('.quiz-plate');
+    //     for(let i = 0; i < quizPlate.length; i++){
+    //         const nextBtn = quizPlate[i].querySelector('.btn-round-light');
+    //         nextBtn.addEventListener('click', function(){
+    //             for(let plate of quizPlate){
+    //                 plate.classList.remove('active');
+    //             }
+    //             quizPlate[i+1].classList.add('active');
+    //         })
+    //     }
+    // }
 
     /********RATING STARS****** */
     const ratingBlock = document.querySelectorAll('.rating-block');
@@ -145,4 +145,251 @@ document.addEventListener("DOMContentLoaded", function (){
         })
     }
 
-})
+        // Quiz plates
+    const quizPlates = document.querySelectorAll(".quiz-plate");
+    const quiz = new Quiz();
+
+    for (const [i, plate] of quizPlates.entries()) {
+        const p = new QuizPlate(
+        plate,
+        plate.querySelector(".quiz-progress"),
+        plate.querySelector(".quiz-progress").querySelector("span"),
+        plate.querySelector("input").type,
+        i,
+        quizPlates.length
+        );
+
+        // Add next button
+        const next = plate.querySelector("button[data-role='next']");
+        if (next) p.addNextBtn(next, quizPlates[i + 1], quiz.getPlates());
+
+        // Add prev button
+        const prev = plate.querySelector("button[data-role='prev']");
+        if (prev) p.addPrevBtn(prev, quizPlates[i - 1]);
+
+        // Set strict mode for the 3rd plate
+        if (i == 1) p.setStrict(true);
+
+        // Initialize plate
+        p.init();
+
+        quiz.addPlate(p);
+    }
+    });
+
+    class Quiz {
+    constructor() {
+        this.#plates = [];
+    }
+
+    // Add plate to the quiz
+    addPlate(_plate) {
+        this.#plates.push(_plate);
+    }
+
+    // Get access to the plates
+    getPlates() {
+        return this.#plates;
+    }
+
+    checkFilled(plateInd) {}
+
+    getResults() {}
+
+    // Private properties
+    #plates;
+    }
+
+    class QuizPlate {
+    constructor(_elem, _prBar, _pr, _type, _ind, _len) {
+        this.#element = _elem;
+        this.#progressBar = _prBar;
+        this.#progress = _pr;
+        this.#type = _type;
+        this.#ind = _ind;
+        this.#len = _len;
+    }
+
+    init() {
+        if (this.verify()) {
+        this.initProgWidth();
+        this.collectInputs();
+        }
+    }
+
+    // Returns true if all arguments are valid DOM elements
+    verify() {
+        return (
+        this.#element instanceof HTMLElement &&
+        this.#progressBar instanceof HTMLElement &&
+        this.#progress instanceof HTMLElement
+        );
+    }
+
+    // Add "next" button
+    addNextBtn(_elem, _nextElem, _allPlates) {
+        this.#nextBtn = _elem;
+
+        // Basic functionality
+        this.#nextBtn.onclick = () => {
+        if (this.#filled && this.#ind != this.#len - 1) {
+            this.#element.classList.remove("active");
+            _nextElem.classList.add("active");
+        }
+
+        // For the last plate -> submit data
+        if (this.#ind == this.#len - 1) {
+            for (const plate of _allPlates) console.log(plate.getData());
+        }
+        };
+    }
+
+    // Add "prev" button
+    addPrevBtn(_elem, _prevElem) {
+        this.#prevBtn = _elem;
+
+        // Basic functionality
+        this.#prevBtn.onclick = () => {
+        this.#element.classList.remove("active");
+        _prevElem.classList.add("active");
+        };
+    }
+
+    // Set initial progress bar width
+    initProgWidth() {
+        // Calculate one step width
+        this.#progressBarWidth = parseInt(
+        window.getComputedStyle(this.#progressBar).maxWidth
+        );
+        // Initial progress len
+        this.setProgress((this.#ind * this.#progressBarWidth) / this.#len);
+    }
+
+    // Set progress width
+    setProgress(_value) {
+        if (typeof (_value == "number") && _value >= 0)
+        this.#progress.style.width = _value + "px";
+    }
+
+    // Progress step
+    progressStep() {
+        // Show progress
+        this.setProgress(((this.#ind + 1) * this.#progressBarWidth) / this.#len);
+    }
+
+    // Collect initial inputs
+    collectInputs() {
+        const inputs = this.#element.querySelectorAll("input");
+        // Iterate over all inputs inside the element and add all inputs of the selected type
+        for (const input of inputs) {
+        if (input.type == this.#type) {
+            // Add listener accordingly
+            switch (this.#type) {
+            // If plate consist of radio inputs
+            case "radio":
+                // Click make plate filled
+                input.onclick = () => {
+                this.#filled = true;
+
+                // Store data
+                this.#data[input.name] = input.nextElementSibling.innerText;
+
+                // Show progress
+                this.progressStep();
+                };
+                break;
+
+            // If plate consist of text inputs
+            case "text":
+                input.onchange = () => {
+                let allFilled = true;
+
+                // If strict mode is activated, confirm that all fields filled
+                if (this.#strict) {
+                    // Iterate over other text fields
+                    for (const inpEl of inputs) {
+                    // If at least one is not filled -> toggle flag
+                    if (inpEl.value == "") allFilled = false;
+                    }
+                }
+
+                // If all fields filled
+                if (allFilled) {
+                    // Set filled state of the plate
+                    this.#filled = true;
+
+                    // Store data from each field
+                    for (const inpEl of inputs)
+                    this.#data[inpEl.name] = inpEl.value;
+
+                    // Show progress
+                    this.progressStep();
+                } else {
+                    this.#filled = false;
+                    // Reverse progress
+                    this.initProgWidth();
+                }
+                };
+                break;
+
+            // If plate consist of range inputs
+            case "range":
+                // Default range -> automatically set filled flag
+                if (input.defaultValue != "") {
+                this.#filled = true;
+
+                // Store data
+                this.#data[input.name] = input.value;
+
+                this.progressStep();
+                }
+                // If no default value, then filled only on change
+                else
+                input.onchange = () => {
+                    this.#filled = true;
+                    // Store data
+                    this.#data[input.name] = input.value;
+                    // Show progress
+                    this.progressStep();
+                };
+                break;
+            }
+
+            // Add this inputs to the plate
+            this.#inputs.push(input);
+        }
+        }
+    }
+
+    // Set "strict mode" setting
+    setStrict(_bool) {
+        this.#strict = Boolean(_bool);
+    }
+
+    // Set "flag" that user selected an answer
+    setFilled(_filled) {
+        this.#filled = Boolean(_filled);
+    }
+
+    // Get stored data
+    getData() {
+        return this.#data;
+    }
+
+    // Private fields
+    #element;
+    #progressBar;
+    #progress;
+    #type;
+    #ind;
+    #len;
+    #data = {};
+    #progressBarWidth = 0;
+    #inputs = [];
+    #nextBtn = null;
+    #prevBtn = null;
+    #filled = false;
+    #strict = false;
+    }
+
+

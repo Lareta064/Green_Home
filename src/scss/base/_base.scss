@@ -154,6 +154,8 @@ main{padding-bottom: 120px;}
 	}
 }
 .grid-50,.grid-850{
+	width: 100%!important;
+	max-width: 100%!important;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap:30px;
